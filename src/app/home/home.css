@@ -1,0 +1,24 @@
+.flight-card {
+    width: 250px;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.card-content{
+    margin-top: 10px;
+}
+.loading-card{
+    max-width: 420px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.loading-img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}

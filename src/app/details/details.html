@@ -1,2 +1,10 @@
-<p>details works!</p>
-<p>ID: {{id()}}</p>
+@if(flight()){
+<ul>
+    <li>ID: {{flight()?.id}}</li>
+    <li>Destination: {{flight()?.destination}}</li>
+    <li>Scheduled At: {{flight()?.scheduledAt}}</li>
+    <li>Plane Model: {{flight()?.plane}}</li>
+    <li>Terminal: {{flight()?.terminal}}</li>
+
+</ul>
+}
