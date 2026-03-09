@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
+import { RouterOutlet, RouterLinkWithHref, Router } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,11 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('klijentse-veb-aplikacije-2026');
-  ime = 'Milos';
-  index = '2023201285'
+  public service = AuthService
+  constructor(private router: Router) { 
+    this.router.navigate(['/login']) 
+  }
+  doLogout() {
+    AuthService.logout()
+  }
 }

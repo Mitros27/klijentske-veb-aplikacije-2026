@@ -13,19 +13,16 @@
             <a [routerLink]="`/details/${f.id}`" matButton="">
                 <mat-icon fontIcon="description" /> Details
             </a>
+            @if (service.getActiveUser()) {
+            <a [routerLink]="`/details/${f.id}/booking`" matButton="">
+                <mat-icon fontIcon="airplane_ticket" /> Book now
+            </a>
+            }
         </mat-card-actions>
     </mat-card>
     }
 </div>
 }
 @else {
-<mat-card class="loading-card">
-    <img src="/loading.webp" class="loading-img">
-    <mat-card-content>
-        <h3>Podaci se ucitavaju</h3>
-        <p>Molimo sacekajte...</p>
-    </mat-card-content>
-
-</mat-card>
-
+    <app-loading/>
 }
